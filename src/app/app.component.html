@@ -7,6 +7,18 @@
     <h1>OptaBet</h1>
 </div>
 <app-tabs [tabOptions]="tabs" (onTabChange)="showTabInfo($event)"></app-tabs>
-<h2 *ngIf="activeTab == 0">Inicio</h2>
-<h2 *ngIf="activeTab == 1">Gráficas</h2>
-<h2 *ngIf="activeTab == 2">Configuración</h2>
+<div *ngIf="activeTab == 0">
+    <h2>Inicio</h2>
+    <app-teams-table [tableHeaders]="headers" [tableTeams]="tableTeams"></app-teams-table>
+</div>
+<div *ngIf="activeTab == 1">
+    <h2>Gráficas</h2>
+</div>
+<div *ngIf="activeTab == 2">
+    <div>
+        <h2>Configuración</h2>
+    </div>
+    <div class="centered-button">
+        <button class="btn btn-success" (click)="doRequest()">Obtener datos de API</button>
+    </div>
+</div>
