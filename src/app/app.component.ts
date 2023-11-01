@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'optabet-app';
+  tabs: string[] = ["../../../assets/images/hogar.png", "../../../assets/images/investigacion.png", "../../../assets/images/configuraciones.png"];
+  activeTab: number = 0;
+
+  constructor() {}
+
+  showTabInfo(t: number) {
+    this.activeTab = t;
+  }
 }

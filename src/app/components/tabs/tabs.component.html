@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs flex-column flex-sm-row custom-tab">
+    <li class="nav-item" *ngFor="let t of tabOptions; let i = index" (click)="changeTab(i)">
+      <a class="nav-link" aria-current="page" [ngClass]="activeTab == i ? 'active' : ''">
+        <img src={{t}} height="40px">
+      </a>
+    </li>
+</ul>
