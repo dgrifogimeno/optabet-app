@@ -1,4 +1,18 @@
 .custom-table {
     text-align: center;
     margin: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.headerHelper {
+    font-size: small;
+    font-style: italic;
+}
+
+.small-btn {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -4,15 +4,25 @@
           <tr>
             <th *ngFor="let header of tableHeaders"> {{ header }} </th>
           </tr>
+          <tr class="headerHelper">
+            <th *ngFor="let headersHelper of tableHeadersHelpers"> {{ headersHelper }} </th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let t of tableTeams">
-            <td> {{ t.name }} </td>
-            <td> {{ t.code }} </td>
-            <td> {{ t.totalGoals }} </td>
-            <td> {{ t.favourGoals }} </td>
-            <td> {{ t.againstGoals }} </td>
-            <td> {{ t.form }} </td>
+            <td>{{ t.code }}</td>
+            <td>{{ convertirAEmojis(t.form.toString()) }}</td>
+            <td>{{ t.wins_local_games }} : {{t.draws_local_games}} : {{t.loses_local_games}}</td>
+            <td>{{ t.wins_visitor_games }} : {{t.draws_visitor_games}} : {{t.loses_visitor_games}}</td>
+            <td>{{ t.favour_local_goals }} : {{ t.favour_visitor_goals }}</td>
+            <td>{{ t.against_local_goals }} : {{ t.against_visitor_goals }}</td>
+            <td>{{ t.favour_goals_0_15 }} : {{ t.favour_goals_16_30 }} : {{ t.favour_goals_31_45 }} : {{ t.favour_goals_46_60 }} : {{ t.favour_goals_61_75 }} : {{ t.favour_goals_76_90 }}</td>
+            <td>{{ t.against_goals_0_15 }} : {{ t.against_goals_16_30 }} : {{ t.against_goals_31_45 }} : {{ t.against_goals_46_60 }} : {{ t.against_goals_61_75 }} : {{ t.against_goals_76_90 }}</td>
+            <td>{{ t.local_clean_sheets }} : {{ t.visitor_clean_sheets }}</td>
+            <td>{{ t.local_failed_to_score }} : {{ t.visitor_failed_to_score }}</td>
+            <td>{{ t.total_yellow_cards }}</td>
+            <td>{{ t.total_red_cards }}</td>
+            <td><button class="btn btn-warning small-btn"><img src="../assets/images/ojo.png" height="20px" (click)="visualizeTeam(t)"></button></td>
           </tr>
         </tbody>
     </table>

@@ -1,6 +1,6 @@
-<router-outlet></router-outlet>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- <button class="btn btn-danger">B</button> -->
+<router-outlet></router-outlet>
 
 <!-- <div id="background"></div> -->
 <div class="header">
@@ -9,7 +9,7 @@
 <app-tabs [tabOptions]="tabs" (onTabChange)="showTabInfo($event)"></app-tabs>
 <div *ngIf="activeTab == 0">
     <h2>Inicio</h2>
-    <app-teams-table [tableHeaders]="headers" [tableTeams]="tableTeams"></app-teams-table>
+    <app-teams-table [tableHeaders]="headers" [tableHeadersHelpers]="headersHelpers" [tableTeams]="teams"></app-teams-table>
 </div>
 <div *ngIf="activeTab == 1">
     <h2>Gráficas</h2>
@@ -19,6 +19,8 @@
         <h2>Configuración</h2>
     </div>
     <div class="centered-button">
-        <button class="btn btn-success" (click)="doRequest()">Obtener datos de API</button>
+        <button class="btn btn-success bold-button" (click)="doRequestTeamsInfo()"><img src="../assets/images/equipo.png" height="60px">Obtener datos generales de equipos</button>
+        <button class="btn btn-primary bold-button" (click)="doRequestMatchesInfo()"><img src="../assets/images/campo-de-futbol.png" height="60px">Obtener datos de los partidos</button>
+        <button class="btn btn-danger bold-button" (click)="doRequestStatisticsInfo()"><img src="../assets/images/analitica.png" height="60px">Obtener datos de estadísticas</button>
     </div>
 </div>
