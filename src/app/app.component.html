@@ -8,11 +8,14 @@
 </div>
 <app-tabs [tabOptions]="tabs" (onTabChange)="showTabInfo($event)"></app-tabs>
 <div *ngIf="activeTab == 0">
-    <h2>Inicio</h2>
+    <h2>Datos Generales</h2>
     <app-teams-table [tableHeaders]="headers" [tableHeadersHelpers]="headersHelpers" [tableTeams]="teams"></app-teams-table>
 </div>
 <div *ngIf="activeTab == 1">
-    <h2>Gráficas</h2>
+    <h2>Estadísticas</h2>
+    <div>
+        <app-teams-statistics></app-teams-statistics>
+    </div>
 </div>
 <div *ngIf="activeTab == 2">
     <div>

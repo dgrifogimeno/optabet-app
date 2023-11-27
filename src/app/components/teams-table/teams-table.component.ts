@@ -34,7 +34,11 @@ export class TeamsTableComponent {
     return formConvertido;
   }
 
-  visualizeTeam(t: Team) {
+  toggleAdditionalStats(t_id: number) {
     // Petición a DB para que devuelva las stats de los últimos partidos de ese equipo
+  //   const team = this.tableTeams.find(t => t.id === t_id);
+  //   if (team) {
+  //     team.showAdditionalStats = !team.showAdditionalStats;
+  //   }
   }
 }

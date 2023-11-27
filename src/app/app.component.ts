@@ -17,11 +17,11 @@ export class AppComponent {
 
   // Tabs
   tabs: string[] = ["../../../assets/images/hogar.png", "../../../assets/images/investigacion.png", "../../../assets/images/configuraciones.png"];
-  activeTab: number = 0;
+  activeTab: number = 1;
 
   // Table
-  headers: string[] = ["Cód.", "Din.", "P. Local", "P. Vis.", "GF", "GC", "GF Mins.", "GC Mins.", "Port. 0", "Goles 0", "TA", "TR", ""];
-  headersHelpers: string[] = ["", "➡️", "V : E : D", "V : E : D", "L : V", "L : V", "0-15 : 16-30 : 31-45 : 46-60 : 61-75 : 76-90", "0-15 : 16-30 : 31-45 : 46-60 : 61-75 : 76-90", "L : V", "L : V", "", "", ""];
+  headers: string[] = ["Cód.", "Din.", "P. Loc.", "P. Vis.", "GF", "GC", "GF Mins.", "GC Mins.", "Port. 0", "TA", "TR", ""];
+  headersHelpers: string[] = ["", "➡️", "V : E : D", "V : E : D", "L : V", "L : V", "0-15 : 16-30 : 31-45 : 46-60 : 61-75 : 76-90", "0-15 : 16-30 : 31-45 : 46-60 : 61-75 : 76-90", "L : V", "", "", ""];
 
   // Http client
   //http = inject(HttpClient);

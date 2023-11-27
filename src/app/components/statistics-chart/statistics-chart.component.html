@@ -1,0 +1,9 @@
+<div class="chart" *ngIf="team != null">
+    <h4> {{team.code}} </h4>
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [title]="chartOptions.title"
+    ></apx-chart>
+</div>

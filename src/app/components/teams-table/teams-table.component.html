@@ -19,11 +19,19 @@
             <td>{{ t.favour_goals_0_15 }} : {{ t.favour_goals_16_30 }} : {{ t.favour_goals_31_45 }} : {{ t.favour_goals_46_60 }} : {{ t.favour_goals_61_75 }} : {{ t.favour_goals_76_90 }}</td>
             <td>{{ t.against_goals_0_15 }} : {{ t.against_goals_16_30 }} : {{ t.against_goals_31_45 }} : {{ t.against_goals_46_60 }} : {{ t.against_goals_61_75 }} : {{ t.against_goals_76_90 }}</td>
             <td>{{ t.local_clean_sheets }} : {{ t.visitor_clean_sheets }}</td>
-            <td>{{ t.local_failed_to_score }} : {{ t.visitor_failed_to_score }}</td>
             <td>{{ t.total_yellow_cards }}</td>
             <td>{{ t.total_red_cards }}</td>
-            <td><button class="btn btn-warning small-btn"><img src="../assets/images/ojo.png" height="20px" (click)="visualizeTeam(t)"></button></td>
+            <td><button class="btn btn-warning small-btn"><img src="../assets/images/ojo.png" height="20px" (click)="toggleAdditionalStats(t.id)"></button></td>
           </tr>
+
+          <!-- <tr *ngFor="let team of tableTeams">
+            <td [attr.colspan]="tableHeaders.length + 1" *ngIf="team.showAdditionalStats">
+              <div>
+                <h4>Estadísticas Detalladas para {{ team.name }}</h4>
+                {{ team.additionalStats | json }}
+              </div>
+            </td>
+          </tr> -->
         </tbody>
     </table>
 </div>

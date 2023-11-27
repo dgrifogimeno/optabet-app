@@ -1,0 +1,19 @@
+<div class="row d-flex flex-row">
+    <div class="col-md-4">
+        <h4>Selecciona el equipo a visualizar:</h4>
+        <app-dropdown-menu (selectedTeamChange)="showStatisticsChart($event)"></app-dropdown-menu>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="compareTeamsCheckbox" [(ngModel)]="compareTeams">
+            <label class="form-check-label" for="flexCheckDefault">
+                Comparar equipos
+            </label>
+        </div>
+        <div *ngIf="compareTeams">
+            <h4>Selecciona el equipo a visualizar:</h4>
+            <app-dropdown-menu></app-dropdown-menu>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <app-statistics-chart [team]="team1"></app-statistics-chart>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ selectedTeam ? selectedTeam.name : 'Equipo' }}
+    </button>
+    <ul class="dropdown-menu">
+        <div class="row">
+            <div class="col">
+                <li *ngFor="let t of teams.slice(0, teams.length / 2)">
+                    <button class="dropdown-item" type="button" (click)="onSelectTeam(t)">{{t.name}}</button>
+                </li>
+            </div>
+            <div class="col">
+                <li *ngFor="let t of teams.slice(teams.length / 2)">
+                    <button class="dropdown-item" type="button" (click)="onSelectTeam(t)">{{t.name}}</button>
+                </li>
+            </div>
+        </div>
+    </ul>
+</div>

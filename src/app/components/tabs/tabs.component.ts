@@ -9,7 +9,7 @@ export class TabsComponent {
 
   @Input() tabOptions: string[] = [];
   @Output() onTabChange = new EventEmitter<number>();
-  activeTab: number = 0;
+  activeTab: number = 1;
 
   constructor() {}
 
